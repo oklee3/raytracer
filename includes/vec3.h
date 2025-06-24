@@ -1,13 +1,18 @@
 #ifndef VEC3_H
 #define VEC3_h
 
+#include <cmath>
+#include <iostream>
+
+// to store and perform operations on vectors
 class vec3 {
     public:
-        double v[3];
+        double x, y, z;
 
         vec3() {}
-        vec3(double v1, double v2, double v3) : v{v1,v2,v3} {}
-        
+        vec3(double x_, double y_, double z_) : x(x_), y(y_), z(z_) {}
+
+
 };
 
 #endif
