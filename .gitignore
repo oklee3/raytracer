@@ -1,3 +1,16 @@
+# Build and CMake
+/build/
+/build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.ninja
+.ninja_*
+
+# IDEs and Editors
+.vscode/
+
 # Prerequisites
 *.d
 
