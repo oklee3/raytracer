@@ -7,12 +7,17 @@ set ( CMAKE_CXX_STANDARD_REQUIRED ON )
 set ( CMAKE_CXX_EXTENSIONS        OFF )
 
 set (EXTERNAL
-    exeternal/stb_image_write.h
+    external/stb_image_write.h
 )
 
 set (SOURCE_RAYTRACER
     src/main.cpp
     includes/vec3.h
+    includes/raytracer.h
+    includes/viewport.h
+    includes/ray.h
 )
+
+include_directories(includes)
 
 add_executable(raytracer ${SOURCE_RAYTRACER} ${EXTERNAL})

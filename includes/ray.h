@@ -2,20 +2,20 @@
 #define RAY_H
 
 class ray {
-    private:
-        point3 origin;
-        vec3 direction;
-
     public:
         ray() {}
-        ray(const point3& origin_, const vec3& direction_) : origin(origin_), direction(direction_) {}
+        ray(const point3& origin_, const vec3& direction_) : m_origin(origin_), m_direction(direction_) {}
 
-        const point3& origin() const { return origin; }
-        const vec3& direction() const { return direction; }
+        const point3& origin() const { return m_origin; }
+        const vec3& direction() const { return m_direction; }
 
         point3 at(double t) const {
-            return origin + direction * t;
+            return m_origin + m_direction * t;
         }
+
+    private:
+        point3 m_origin;
+        vec3 m_direction;
 };       
 
 #endif
