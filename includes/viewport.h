@@ -1,12 +1,12 @@
-#ifndef CAMERA_H
-#define CAMERA_H
+#ifndef VIEWPORT_H
+#define VIEWPORT_H
 
 #include "hittable.h"
 #include "material.h"
 
-// camera will be initialized to default values that can be changed by calls to the instance
+// viewport will be initialized to default values that can be changed by calls to the instance
 // initialize will be called as a part of render
-class camera {
+class viewport {
     public:
         // customizable aspects of the scene
         double aspect_ratio = 1.0;
@@ -36,7 +36,8 @@ class camera {
                         ray r = get_ray(i, j);
                         pixel_color += ray_color(r, max_depth, world); // add each sampled ray
                     }
-                    write_color(std::cout, pixel_color * pixel_samples_scale); // average over num samples
+                    std::vector<unsigned char> buffer;
+                    write_color_to_buffer(buffer, pixel_color * pixel_samples_scale); // average over num samples
                 }
             }
 

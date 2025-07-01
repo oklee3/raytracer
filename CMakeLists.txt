@@ -18,6 +18,6 @@ set (SOURCE_RAYTRACER
     includes/ray.h
 )
 
-include_directories(includes, external)
+include_directories(includes)
 
 add_executable(raytracer ${SOURCE_RAYTRACER} ${EXTERNAL})
