@@ -3,6 +3,7 @@
 
 #include "surface.h"
 #include "material.h"
+#include "stb_image_write.h"
 
 // viewport will be initialized to default values that can be changed by calls to the instance
 // initialize will be called as a part of render
@@ -36,11 +37,11 @@ class viewport {
                         ray r = get_ray(i, j);
                         pixel_color += ray_color(r, max_depth, world); // add each sampled ray
                     }
-                    std::vector<unsigned char> buffer;
                     write_color_to_buffer(buffer, pixel_color * pixel_samples_scale); // average over num samples
                 }
             }
-
+            
+            stbi_write_png("image.png", image_width, image_height, 3, buffer.data(), image_width * 3);
             std::clog << "\rDone.                 \n";
         }
 
@@ -55,6 +56,8 @@ class viewport {
         vec3 u, v, w; // camera frame vectors
         vec3 defocus_disk_u;
         vec3 defocus_disk_v;
+
+        std::vector<unsigned char> buffer; // to write pixel data to
 
         void initialize() {
             image_height = int(image_width / aspect_ratio);

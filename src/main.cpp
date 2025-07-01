@@ -1,3 +1,4 @@
+#define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "raytracer.h"
 
 #include "viewport.h"

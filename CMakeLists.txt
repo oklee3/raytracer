@@ -18,6 +18,13 @@ set (SOURCE_RAYTRACER
     includes/ray.h
 )
 
-include_directories(includes)
+include_directories(includes external)
 
 add_executable(raytracer ${SOURCE_RAYTRACER} ${EXTERNAL})
+
+# Suppress 'sprintf' deprecation warning for image_write.cpp
+if (CMAKE_CXX_COMPILER_ID MATCHES "Clang|AppleClang")
+    set_source_files_properties(image_write.cpp PROPERTIES
+        COMPILE_FLAGS "-Wno-deprecated-declarations"
+    )
+endif()
