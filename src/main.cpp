@@ -53,7 +53,7 @@ int main() {
     viewport view;
 
     view.aspect_ratio      = 16.0 / 9.0;
-    view.image_width       = 1200;
+    view.image_width       = 400;
     view.samples_per_pixel = 10;
     view.max_depth         = 50;
 
