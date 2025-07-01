@@ -1,7 +1,7 @@
-#ifndef HITTABLE_LIST_H
-#define HITTABLE_LIST_H
+#ifndef SURFACE_LIST_H
+#define SURFACE_LIST_H
 
-#include "hittable.h"
+#include "surface.h"
 #include <vector>
 
 class hittable_list : public hittable {
