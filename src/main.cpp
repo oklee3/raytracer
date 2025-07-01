@@ -1,13 +1,13 @@
 #include "raytracer.h"
 
 #include "viewport.h"
-#include "hittable.h"
-#include "hittable_list.h"
+#include "surface.h"
+#include "surface_list.h"
 #include "material.h"
 #include "sphere.h"
 
 int main() {
-    hittable_list world;
+    surface_list world;
 
     auto ground_material = make_shared<lambertian>(color(0.5, 0.5, 0.5));
     world.add(make_shared<sphere>(point3(0,-1000,0), 1000, ground_material));

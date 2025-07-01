@@ -1,7 +1,7 @@
 #ifndef VIEWPORT_H
 #define VIEWPORT_H
 
-#include "hittable.h"
+#include "surface.h"
 #include "material.h"
 
 // viewport will be initialized to default values that can be changed by calls to the instance
@@ -22,7 +22,7 @@ class viewport {
         double defocus_angle = 0;
         double focus_dist = 10;
 
-        void render(const hittable& world) {
+        void render(const surface& world) {
             initialize();
 
             std::cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
@@ -114,7 +114,7 @@ class viewport {
             return center + (p[0] * defocus_disk_u) + (p[1] * defocus_disk_v);
         }
 
-        color ray_color(const ray& r, int depth, const hittable& world) const {
+        color ray_color(const ray& r, int depth, const surface& world) const {
             if (depth <= 0)
                 return color(0,0,0); // return black if ray bounces max times
 

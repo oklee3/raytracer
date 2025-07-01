@@ -1,5 +1,5 @@
-#ifndef HITTABLE_H
-#define HITTABLE_H
+#ifndef SURFACE_H
+#define SURFACE_H
 
 #include "ray.h"
 #include "interval.h"
@@ -23,10 +23,10 @@ class hit_record {
         }
 };
 
-class hittable {
+class surface {
     public:
-        // virtual destructor to allow destruction of a hittable* pointer
-        virtual ~hittable() = default;
+        // virtual destructor to allow destruction of a surface* pointer
+        virtual ~surface() = default;
 
         // pure virtual function, each obj class will have its own hit detection
         virtual bool hit(const ray& r, interval ray_t, hit_record& rec) const = 0;

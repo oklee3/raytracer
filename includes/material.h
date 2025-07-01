@@ -1,7 +1,7 @@
 #ifndef MATERIAL_H
 #define MATERIAL_H
 
-#include "hittable.h"
+#include "surface.h"
 
 class material {
     public:

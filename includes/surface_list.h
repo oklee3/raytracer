@@ -4,16 +4,16 @@
 #include "surface.h"
 #include <vector>
 
-class hittable_list : public hittable {
+class surface_list : public surface {
     public:
-        // create vector of shared pointers to hittable
+        // create vector of shared pointers to surface
         // allows for automatic management of the list's reference to each object + any others
-        std::vector<shared_ptr<hittable>> objects;
+        std::vector<shared_ptr<surface>> objects;
 
-        hittable_list() {}
-        hittable_list(shared_ptr<hittable> object) { add(object); }
+        surface_list() {}
+        surface_list(shared_ptr<surface> object) { add(object); }
 
-        void add(shared_ptr<hittable> object) {
+        void add(shared_ptr<surface> object) {
             objects.push_back(object);
         }
 

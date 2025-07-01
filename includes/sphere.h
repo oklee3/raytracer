@@ -1,9 +1,9 @@
 #ifndef SPHERE_H
 #define SPHERE_H
 
-#include "hittable.h"
+#include "surface.h"
 
-class sphere : public hittable {
+class sphere : public surface {
     public:
         sphere(const point3& center, double radius, shared_ptr<material> mat) 
             : center(center), radius(std::fmax(0, radius)), mat(mat) {}
